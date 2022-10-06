@@ -1,0 +1,152 @@
+nav {
+  background-color: #d26e56 !important;
+  background-image: url(../../../../assets/vetores/Navbar.svg);
+  background-size: cover;
+}
+
+#logo {
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 7rem;
+  background-size: cover;
+}
+
+#sacolinha {
+  height: 2.7em;
+  padding-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a,
+nav {
+  padding: 0;
+}
+
+button {
+  background: none !important;
+  border: none !important;
+  color: white;
+}
+
+/*img {
+  font-size: 1.2em;
+  height: 3em;
+  margin-right: 10px;
+  color: white;
+}*/
+
+#sacolinha{
+font-size: 1rem;
+margin-right: 20px;
+}
+
+#cadastrarCliente {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.icons {
+  display: flex;
+  margin-right: 40px !important;
+}
+
+.fa-gear {
+  font-size: 3.5em;
+  color: white;
+}
+
+#dropdownMenuButton{
+  color: white !important;
+  font-size: 1.2rem;
+}
+#dropdownMenuButton img{
+  width: 2.5rem;
+}
+
+.dropdown-item{
+  color: #973e2e;
+
+}
+.dropdown-item:hover{
+  background-color: #ffd392 !important;
+  color: black;
+
+}
+
+
+.dropdown-menu{
+  padding: 10px;
+  background-color: #ffd392;
+}
+.dropdown{
+  margin-right: 20px;
+}
+
+.dropdown a{
+  background-color: transparent !important;
+
+}
+.navegacao{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsividade */
+
+@media only screen and (max-width: 799px) {
+  img {
+    height: 2.6em;
+  }
+  #cadastrarCliente {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 699px) {
+  img {
+    height: 2.4em;
+  }
+  #cadastrarCliente {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  img {
+    height: 2.2em;
+  }
+  #cadastrarCliente {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  img {
+    height: 2em;
+  }
+  #cadastrarCliente {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  img {
+    height: 2em;
+  }
+  #cadastrarCliente {
+    display: none;
+  }
+  #logo {
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 5rem;
+    background-size: cover;
+  }
+}

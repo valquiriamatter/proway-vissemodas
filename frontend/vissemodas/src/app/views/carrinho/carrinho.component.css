@@ -1,0 +1,87 @@
+.title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-danger {
+  margin-left: 10px;
+}
+
+.col-2,
+h6,
+span {
+  color: #973e2e !important;
+}
+
+.card-body {
+  height: 80vh !important;
+}
+
+img {
+  height: 8em;
+  border-radius: 0.5em;
+}
+
+#inputQtd {
+  padding-left: 2em !important;
+}
+
+.btnExcluir {
+  /* margin-top: 1em; */
+  background: none !important;
+}
+
+.btnExcluir:hover {
+  /* margin-top: 1em; */
+  background: none !important;
+  color: #973e2e !important;
+}
+
+input[type="number"] {
+  background: none !important;
+}
+
+#btnFinalizarCompra {
+  width: 12em;
+  border-radius: 0.5em;
+
+}
+
+#btnInicio {
+  width: 12em;
+  border-radius: 0.8em;
+}
+
+.subtotal{
+  text-align: end;
+  padding: 2rem;
+}
+.subtotal p{
+  margin: 0;
+  font-size: 1.1rem;
+
+}
+
+.subtotal button{
+  margin-top: 1.5rem;
+}
+
+.container-valor{
+  width: fit-content;
+}
+.card{
+  width: 650px;
+}
+
+.desconto .valor-desconto{
+  font-size: 0.8rem !important;
+  margin: 0.5rem;
+}
+.desconto{
+  margin: 0.5rem;
+}
+
+.container{
+  min-height: calc(100vh - 380px);
+
+}

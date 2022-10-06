@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="cards" *ngIf="listaProdutos.length > 0">
+      <table class="table table-hover text-center">
+        <thead>
+          <tr>
+            <th class="col-1">Id</th>
+            <th class="col-3">descrição</th>
+            <th class="col-2">tamanho</th>
+            <th class="col-2">valor unitário</th>
+            <th class="col-2">categoria</th>
+            <th class="col-2">status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of listaProdutos">
+            <td>
+              <a [routerLink]="['/edit-produto', produto.id]">
+                {{ produto.id }}</a
+              >
+            </td>
+            <td class="text-start">{{ produto.descricao }}</td>
+            <td>{{ produto.tamanho }}</td>
+            <td>{{ produto.valorUnitario | currency: "BRL" }}</td>
+            <td>{{ produto.categoria }}</td>
+            <td class="ativoInativo" (click)="desativarProduto(produto.id)">
+              {{ produto.status == true ? "Ativo" : "Inativo" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="mt-3 text-danger" *ngIf="listaProdutos.length == 0">
+        Não há produtos cadastrados
+      </h5>
+    </div>
+  </div>
+</div>

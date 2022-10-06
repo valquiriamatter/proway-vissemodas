@@ -1,0 +1,160 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="title"> {{ title }} endereço </h5>
+          <form
+            class="mt-3"
+            [formGroup]="enderecoForm"
+            (ngSubmit)="addEndereco()"
+          >
+            <!-- CEP -->
+            <div class="mt-3">
+              <div class="col-4">
+                <label for="inputCep">cep</label>
+                <input
+                  formControlName="cep"
+                  type="text"
+                  id="inputCep"
+                  class="form-control"
+                  placeholder="Informe o CEP"
+                  (focusout)="consultaCEP()"
+                  mask="00.000-000"
+                />
+              </div>
+              <div
+                class="text-danger"
+                *ngIf="
+                  enderecoForm.get('cep')?.hasError('required') &&
+                  enderecoForm.get('cep')?.touched
+                "
+              >
+                <span>Campo obrigatório</span>
+              </div>
+            </div>
+
+            <!-- LOGRADOURO -->
+            <div class="mt-3">
+              <label for="inputLogradouro" class="form-label">logradouro</label>
+              <input
+                formControlName="logradouro"
+                type="text"
+                placeholder="Informe o logradouro"
+                class="form-control"
+                id="inputImagem"
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  enderecoForm.get('logradouro')?.hasError('required') &&
+                  enderecoForm.get('logradouro')?.touched
+                "
+              >
+                <span>Campo obrigatório</span>
+              </div>
+            </div>
+            <div class="mt-3 row">
+              <!-- CIDADE -->
+              <div class="col-8">
+                <label for="inputCidade" class="form-label">cidade</label>
+                <input
+                  formControlName="cidade"
+                  type="text"
+                  class="form-control"
+                  placeholder="Informe a cidade"
+                  id="inputCidade"
+                />
+                <div
+                  class="text-danger col-8"
+                  *ngIf="
+                    enderecoForm.get('cidade')?.hasError('required') &&
+                    enderecoForm.get('cidade')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+
+              <!-- ESTADO -->
+              <div class="col-4">
+                <label for="inputEstado" class="form-label">estado</label>
+                <input
+                  formControlName="estado"
+                  type="text"
+                  placeholder="Informe a UF"
+                  class="form-control"
+                  id="inputEstado"
+                />
+              </div>
+              <div
+                class="text-danger col-4"
+                *ngIf="
+                  enderecoForm.get('estado')?.hasError('required') &&
+                  enderecoForm.get('estado')?.touched
+                "
+              >
+                <span>Campo obrigatório</span>
+              </div>
+            </div>
+
+            <div class="mt-3 row">
+              <!-- BAIRRO -->
+              <div class="col-8">
+                <label for="inputBairro" class="form-label">bairro</label>
+                <input
+                  formControlName="bairro"
+                  type="text"
+                  placeholder="Informe o bairro"
+                  class="form-control"
+                  id="inputBairro"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="
+                    enderecoForm.get('bairro')?.hasError('required') &&
+                    enderecoForm.get('bairro')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+              <!-- NUMERO -->
+              <div class="col-4">
+                <label for="inputNumero" class="form-label">número</label>
+                <input
+                  formControlName="numero"
+                  placeholder="Informe o número"
+                  type="text"
+                  class="form-control"
+                  id="inputNumero"
+                />
+              </div>
+              <div
+                class="text-danger"
+                *ngIf="
+                  enderecoForm.get('numero')?.hasError('required') &&
+                  enderecoForm.get('numero')?.touched
+                "
+              >
+                <span>Campo obrigatório</span>
+              </div>
+            </div>
+
+            <!-- BOTÕES -->
+            <div class="mt-5 mb-3">
+              <button routerLink="" class="btn btn-secondary">Voltar</button>
+              <button
+                type="submit"
+                class="btn btn-secondary float-end"
+                [disabled]="enderecoForm.invalid"
+              >
+                {{ btn_text }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

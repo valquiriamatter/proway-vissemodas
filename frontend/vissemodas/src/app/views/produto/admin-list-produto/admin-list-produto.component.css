@@ -1,0 +1,21 @@
+.ativoInativo {
+  cursor: pointer;
+}
+
+.ativoInativo:hover {
+  cursor: pointer;
+  color: #973e2e;
+}
+.ativoInativo::after {
+  /* content: "Ativo" !important; */
+}
+
+.ativoInativo:hover::after {
+  color: #973e2e;
+  /* content: "Desativar" !important; */
+}
+
+a {
+  text-decoration: none;
+  color: #973e2e;
+}

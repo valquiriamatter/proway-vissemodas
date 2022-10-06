@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #973e2e !important;
+}
+
+#btnInicio {
+  width: 12em;
+  border-radius: 0.8em;
+}
+
+.card-body {
+  height: 100vh;
+}

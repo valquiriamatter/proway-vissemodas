@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <!-- CAROUSEL -->
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="../../../assets/carousel/BLACK.png"
+          class="d-block w-100"
+          alt="Promoção da black friday"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../../assets/carousel/NATAL.png"
+          class="d-block w-100"
+          alt="Promoção do natal"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../../assets/carousel/DESCONTO.png"
+          class="d-block w-100"
+          alt="Promoção do natal"
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="input-group mt-3 mb-3">
+    <input
+      (change)="filterProdutos(inputBusca.value)"
+      id="inputBuscarProduto"
+      type="text"
+      class="form-control"
+      placeholder="Buscar por categoria"
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+      #inputBusca
+    />
+    <div>
+      <button 
+        (click)="filterProdutos(inputBusca.value)"
+        class="btn btn-outline-secondary"
+        type="button"
+        id="btnBuscarProduto"> 
+        <i class="fa-solid fa-magnifying-glass"></i> 
+      </button>
+    </div>    
+  </div>
+
+  <!-- PRODUTOS -->
+<app-list-produto></app-list-produto>  

@@ -1,0 +1,187 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="title">{{ title }} produto</h5>
+          <form
+            class="mt-3"
+            [formGroup]="produtoForm"
+            (ngSubmit)="addProduto()"
+          >
+            <!-- STATUS -->
+            <!--
+                          TODO: Ver se consegue fazer o switch
+                        -->
+            <div class="form-group" *ngIf="!isEditingProduct">
+              <label>Tipo</label>
+              <div class="form-check">
+                <label class="form-check-label padrao" for="inputAtivo">
+                  Ativo
+                </label>
+                <input
+                  formControlName="status"
+                  class="form-check-input"
+                  type="radio"
+                  name="status"
+                  id="inputAtivo"
+                  value="true"
+                />
+              </div>
+              <div class="form-check">
+                <label class="form-check-label padrao" for="inputInativo">
+                  Inativo
+                </label>
+                <input
+                  formControlName="status"
+                  class="form-check-input"
+                  type="radio"
+                  name="status"
+                  id="inputInativo"
+                  value="false"
+                />
+              </div>
+            </div>
+            <!-- STATUS -->
+            <!-- <div class="form-check form-switch">
+                            <label class="form-check-label" for="inputAtivo">
+                                Ativo?
+                            </label>
+                            <input
+                                [checked]="true"
+                                mdbCheckbox
+                                formControlName="status"
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="inputAtivo"
+                            />
+                        </div> -->
+
+            <!-- DESCRIÇÃO -->
+            <div class="mt-3">
+              <label for="inputDescricao">descrição</label>
+              <textarea
+                formControlName="descricao"
+                id="inputDescricao"
+                class="form-control"
+                placeholder="Informe a descrição do produto"
+              ></textarea>
+              <div
+                class="text-danger"
+                *ngIf="
+                  produtoForm.get('descricao')?.hasError('required') &&
+                  produtoForm.get('descricao')?.touched
+                "
+              >
+                <span>Campo obrigatório</span>
+              </div>
+            </div>
+
+            <div class="mt-3 row">
+              <!-- IMAGEM -->
+              <div class="col-6">
+                <label for="inputImagem" class="form-label">imagem</label>
+                <input
+                  formControlName="imagem"
+                  type="text"
+                  class="form-control"
+                  id="inputImagem"
+                  placeholder="Informe a url da imagem"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="
+                    produtoForm.get('imagem')?.hasError('required') &&
+                    produtoForm.get('imagem')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+              <!-- CATEGORIA -->
+              <div class="col-6">
+                <label for="inputCategoria" class="form-label">categoria</label>
+                <input
+                  formControlName="categoria"
+                  type="text"
+                  class="form-control"
+                  id="inputCategoria"
+                  placeholder="Informe a categoria"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="
+                    produtoForm.get('categoria')?.hasError('required') &&
+                    produtoForm.get('categoria')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 row">
+              <!-- TAMANHO -->
+              <div class="col-6">
+                <label for="inputTamanho" class="form-label">tamanho</label>
+                <input
+                  formControlName="tamanho"
+                  type="text"
+                  class="form-control"
+                  id="inputTamanho"
+                  placeholder="Informe o tamanho"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="
+                    produtoForm.get('tamanho')?.hasError('required') &&
+                    produtoForm.get('tamanho')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+              <!-- VALOR UNITÁRIO -->
+              <div class="col-6">
+                <label for="inputValorUnitario" class="form-label"
+                  >valor unitário</label
+                >
+                <input
+                  formControlName="valorUnitario"
+                  type="number"
+                  min="0"
+                  step="0.05"
+                  class="form-control"
+                  id="inputValorUnitario"
+                  placeholder="Informe o valor"
+                />
+                <div
+                  class="text-danger"
+                  *ngIf="
+                    produtoForm.get('valorUnitario')?.hasError('required') &&
+                    produtoForm.get('valorUnitario')?.touched
+                  "
+                >
+                  <span>Campo obrigatório</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTÕES -->
+            <div class="mt-5 mb-3">
+              <button routerLink="" class="btn btn-secondary">Voltar</button>
+              <button
+                [disabled]="produtoForm.invalid"
+                type="submit"
+                class="btn btn-secondary float-end"
+              >
+                {{ btn_text }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

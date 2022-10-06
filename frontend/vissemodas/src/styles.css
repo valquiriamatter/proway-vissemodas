@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: lovelo;
+  src: url(./fonts/Lovelo_Black.otf) format("opentype");
+}
+
+* {
+  font-family: "lovelo";
+}
+
+th {
+  text-transform: capitalize;
+}
+
+/* Estilo para todos os componentes de cadastro */
+
+.card {
+  border: none !important;
+}
+
+.card-body {
+  height: 100vh !important;
+}
+
+.title {
+  text-transform: uppercase !important;
+  text-align: center !important;
+}
+
+.title,
+label {
+  color: #973e2e !important;
+}
+
+.text-danger span {
+  margin-left: 10px;
+  font-family: "Arial" !important;
+}
+
+/* Tipo ativo ou inativo */
+input[type="radio"]:focus {
+  box-shadow: 0 0 10px #ffd392 !important;
+}
+
+input[type="radio"] {
+  border-color: #f1ae49 !important;
+}
+
+input[type="radio"]:checked {
+  background-color: #f1ae49 !important;
+  border-color: #f1ae49 !important;
+}
+
+/* Cor de fundo dos inputs*/
+input[type="text"],
+input[type="number"],
+textarea,
+textarea:focus {
+  font-family: "Arial" !important;
+  border-radius: 1em !important;
+  background-color: #ffd392 !important;
+  border: none !important;
+  color: #973e2e !important;
+}
+
+/* Botões */
+button,
+.btn {
+  background-color: #d26e56 !important;
+  color: #ffd392 !important;
+  border: none !important;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #973e2e !important;
+  color: #ffd392 !important;
+}
+
+button:disabled {
+  background-color: #f1b253 !important;
+  color: #973e2e !important;
+}
+
+/* Cor do placeholder */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #973e2e !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #973e2e !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #973e2e !important;
+}
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #ffd392 inset !important;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #973e2e !important;
+}
+
+li.current{
+  background-color: #ffd392 !important;
+  color:#973e2e;
+}

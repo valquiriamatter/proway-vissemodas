@@ -1,0 +1,16 @@
+<div class="container m-5">
+  <h3>Pedidos</h3>
+  <div class="cards">
+    <div *ngFor="let p of listPedidos">
+      <div class="card" style="width: 18rem">
+        <h5 class="card-title"></h5>
+        <p class="card-text">número do pedido: <span>{{ p.id }}</span></p>
+        <p class="card-text">cliente: <span>{{ p.nomeCliente }}</span></p>
+        <p class="card-text">data: <span>{{ p.data | date: 'dd/MM/yyyy' }}</span></p>
+        <p class="card-text">valor pago: <span>{{ p.valorTotal | currency: 'BRL' }}</span></p>
+        <br />
+        <!-- <p class="card-text">situação: <span>{{ p.situacao }}</span></p> -->
+      </div>
+    </div>
+  </div>
+</div>

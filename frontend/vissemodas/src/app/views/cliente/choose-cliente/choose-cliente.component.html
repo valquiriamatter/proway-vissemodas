@@ -1,0 +1,102 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <img
+            class="user"
+            src="../../../../assets/vetores/User_protótipo.svg"
+            alt="User"
+          />
+          <br />
+          <h5 class="title">Escolha o usuário</h5>
+          <form [formGroup]="validacaoForm" class="mt-3">
+            <div class="form-group">
+              <label class="tipo">tipo</label>
+              <div class="form-check">
+                <label class="form-check-label padrao" for="inputTipoCliente">
+                  pessoa física
+                </label>
+                <input
+                  #tipoPessoa
+                  (change)="handleTipoCliente(tipoPessoa.checked)"
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inputTipoPessoa"
+                />
+              </div>
+            </div>
+            <br />
+            <!-- DOCUMENTO -->
+            <div class="col-6">
+              <!-- CPF -->
+              <div *ngIf="tipoPessoa.checked">
+                <label class="form-label" for="inputCpf"> CPF </label>
+                <input
+                  formControlName="cpf"
+                  type="text"
+                  class="form-control"
+                  id="inputCpf"
+                  placeholder="Digite os números do CPF"
+                  mask="000.000.000-00"
+                />
+                <span *ngIf="!hasCliente()" class="text-danger"
+                  >Campo obrigatório</span
+                >
+              </div>
+              <!-- CNPJ -->
+              <div *ngIf="!tipoPessoa.checked">
+                <label class="form-label" for="inputCnpj"> CNPJ </label>
+                <input
+                  formControlName="cnpj"
+                  type="text"
+                  type="text"
+                  class="form-control"
+                  id="inputCnpj"
+                  placeholder="Digite os números do CNPJ"
+                  mask="00.000.000/0000-00"
+                />
+                <span *ngIf="!hasCliente()" class="text-danger"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+
+            <!-- EXIBIR QUEM É O CLIENTE -->
+            <div *ngIf="hasCliente()">
+              <div class="card mb-3 mt-3 clienteBuscado">
+                <h5>Cliente encontrado!</h5>
+                <p>Nome: {{ mostrarCliente.nome }}</p>
+                <p>
+                  Endereço: {{ enderecoCliente.logradouro }},
+                  {{ enderecoCliente.numero }}, {{ enderecoCliente.bairro }}.
+                  {{ enderecoCliente.cidade }} - {{ enderecoCliente.estado }}
+                </p>
+              </div>
+            </div>
+
+            <!-- BOTÕES -->
+            <div class="mt-5 mb-3 botoes">
+              <button routerLink="" class="btn btn-secondary btn-voltar">Voltar</button>
+
+              <!-- Pedidos do cliente -->
+              <div class="botoes-2">
+                <button class="btn btn-secondary float-center btn-pedido" *ngIf="aux == 0 && hasCliente()"
+                  routerLink="/list-pedidos-cliente"
+                >Meus pedidos</button>
+
+              <button
+                type="submit"
+                value="buscarClientesPorId"
+                class="btn btn-secondary"
+                (click)="handleCliente()"
+              >
+                {{ botaoTexto }}
+              </button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: fit-content !important;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    margin: 5px;
+    text-align: center;
+    height: 500px;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    align-content: space-between;
+;
+}
+img{
+    height:288px;
+    width: auto;
+    object-fit: cover;
+
+}
+h5{
+    text-align: center;
+}
+
+th, td {
+    text-align: center;
+}
+
+.numerosPag {
+    color: #D26E56;
+    text-align: center;
+}
+
+#sacolinha{
+    padding: 0.4rem;
+    border-radius: 1rem;
+    position: fixed;
+    top: 90%;
+    right: 5rem;
+    transform: translateY(-50%);
+
+}
+
+#sacolinha img{
+    height: 3.5rem;
+}
+
+ul li .current{
+    background: #973e2e !important;
+}
+

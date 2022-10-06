@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="row">
+      <tbody>
+        <div class="cards" *ngIf="listaProdutos.length > 0">
+          <tr  *ngFor="let prod of listaProdutos | paginate: { itemsPerPage: contador, currentPage: paginaAtual}">                      
+            <div class="card-body">
+              <td> <img
+                src="{{ prod.imagem }}"
+                alt="{{ prod.descricao }}"
+                class="card-img-top"
+              /> </td>
+              <br>
+                <td> <h5 class="card-title">{{ prod.descricao }}</h5> </td>
+                <td> <p class="card-text"> tamanho: {{ prod.tamanho }}</p> </td>
+                <td> <p class="card-text">{{ prod.valorUnitario | currency: "BRL" }}</p> </td>
+                <td> <button href="#" class="btn btn-primary" (click)="addToCart(prod)">
+                  Adicionar à sacola
+                </button> </td>
+            </div>                      
+          </tr>
+        </div>
+      </tbody>
+        <!-- Incluindo o controle de paginação.-->
+      <div class="numerosPag">
+        <pagination-controls (pageChange)="paginaAtual = $event"></pagination-controls>
+      </div>
+      <!-- Caso não tenha produtos cadastrados -->
+      <h5 class="mt-3 text-danger" *ngIf="listaProdutos.length == 0">
+        Não há produtos cadastrados
+      </h5>
+    </div>
+    <button id="sacolinha" routerLink="carrinho"><img src="assets/vetores/Sacolinha.svg" alt=""></button>
+  </div>
+
+

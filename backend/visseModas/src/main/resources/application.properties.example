@@ -1,0 +1,25 @@
+#PARA SEU PROJETO FUNCIONAR, ALTERE AS VARIAVEIS CONFORME INFORMAÇÕES ABAIXO E
+# MUDE O NOME DO ARQUIVO PARA >>> application.properties
+
+spring.jpa.hibernate.ddl-auto=update
+
+# configuração do banco de dados
+# alterar as variáveis confome os seus dados NOME_SGBD, PORTA_SGBD, NOME_SCHEMA
+
+spring.datasource.url=jdbc:NOMEDOBANCO://localhost:PORTA_SGBD/NOME_SCHEMA
+
+# configuração do usuário a ser utilizado no banco
+# alterar a variável confome os seus dados USERNAME
+
+spring.datasource.username=USERNAME
+
+# configuração da senha do usuário a ser utilizado
+# alterar a variável confome os seus dados PASSWORD
+
+spring.datasource.password=PASSWORD
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.jpa.show-sql=true
+
+# Configuração para aparecer o console colorido
+spring.output.ansi.enabled=ALWAYS
+spring.main.banner-mode=off

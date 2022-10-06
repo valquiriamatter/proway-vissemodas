@@ -1,0 +1,44 @@
+.title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-danger {
+  margin-left: 10px;
+}
+
+.btn {
+  color: #ffd392;
+}
+
+.form-label {
+  color: #973e2e;
+}
+
+.tipo {
+  color: #973e2e;
+}
+
+.form-check {
+  color: #973e2e;
+}
+
+.form-control {
+  color: blue;
+}
+
+img.user {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.button {
+  color: #973e2e;
+}
+
+#inputJuridica {
+  content: "Digite os números do CNPJ" !important;
+}

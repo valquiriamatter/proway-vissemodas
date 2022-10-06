@@ -1,0 +1,78 @@
+<div class="container mt-5 mb-5">
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card">
+      <h5 class="title">{{tituloTexto}}</h5>
+      <div class="" *ngIf="itensPedido.length > 0">
+        <h6>PRODUTO</h6>
+        <div
+          class="row align-items-center text-center mb-2 mycontainer"
+          *ngFor="let item of itensPedido"
+        >
+          <div class="col-lg-8 text-start">
+            <img [src]="item.produto!.imagem!" [alt]="item.produto!.descricao!" />
+            <!-- descricao -->
+            <span> {{ item.produto!.descricao! }}</span>
+          </div>
+          <div class="col-2">
+            <h6>QTD</h6>
+            <input
+              (change)="handleChangeQTD(qtd.value, item.produto!.id)"
+              class="w-100"
+              type="number"
+              name="inputQtd"
+              id="inputQtd"
+              min="1"
+              value="{{ item.quantidade }}"
+              #qtd
+            />
+            <button
+              class="btnExcluir"
+              (click)="removerItemPedido(item.produto!.id)"
+            >
+              Excluir
+            </button>
+          </div>
+          <div class="col-2 container-valor">
+            <!-- valorUnitario -->
+            <h6>Valor</h6>
+            {{ item.valorTotalItem * item.quantidade | currency: "BRL" }}
+          </div>
+        </div>
+      </div>
+
+      <!--
+        TODO: Mostrar a qtd total e o valor total? E o desconto tbm?
+      -->
+
+      <div class="subtotal"*ngIf="itensPedido.length != 0">
+        <p> QUANTIDADE DE ITENS: <span> {{ count_qtdTotal }} </span></p>
+        <p> {{total}}: <span> {{ count_valorTotal  | currency: "BRL" }} </span></p>
+        <div  *ngIf="count_desconto == 0.2" class="desconto">
+        <p class="valor-desconto"> DESCONTO A SER APLICADO: <span> {{ count_valorTotal * count_desconto | currency: "BRL" }} </span></p>
+        <p> VALOR TOTAL: <span> {{ count_valorTotal - (count_valorTotal * count_desconto) | currency: "BRL" }} </span></p></div>
+        <button
+        (click)="handleCompra()"
+        id="btnFinalizarCompra"
+        *ngIf="itensPedido.length > 0"
+      >
+        {{ botaoTexto }}
+      </button>
+      </div>
+
+ 
+      </div>
+
+
+
+      <div class="container" *ngIf="itensPedido.length == 0">
+        <div class="card">
+          <div class="text-center">
+            <h5>Não há produtos adicionados ao carrinho</h5>
+            <button class="btn mt-5" routerLink="/" id="btnInicio">
+              Início
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
